@@ -13,17 +13,180 @@
     <link rel="shortcut icon" href="./4geeks.ico" />
   </head>
   <body>
-    <div class="container-fluid text-center">
-      <h1 class="mt-5">Hello Rigo!</h1>
-      <img src="./rigo-baby.jpg" />
-      <p class="alert alert-warning mt-4">
-        If this text is <b>not</b> centered and <b>yellow</b>, you probably have
-        an error
-      </p>
-      <div class="fixed-bottom p-4">
-        Made with ❤️ by
-        <a href="https://www.4geeksacademy.com">4Geeks Academy</a>
+    <div class="wrapper">
+      <div class="container border rounded mt-5 p-0">
+        <div class="tit border-bottom bg-light mb-3 px-3">
+          <h1 class="py-3">Payments form example</h1>
+        </div>
+        <div id="alerta" class="alert alert-danger mx-3" role="alert">
+          Some fields are missing
+        </div>
+
+        <form id="form">
+          <div class="row mx-3">
+            <div class="form-group col-sm-12 col-md-5">
+              <label for="InputCard">Card</label>
+              <input
+                id="card"
+                type="text"
+                class="form-control"
+                placeholder="XXXX XXXX XXXX XXXX"
+                id="card"
+              />
+            </div>
+
+            <div class="form-group col-sm-12 col-md-3">
+              <label for="cvc">CVC #</label>
+              <input
+                id="cvc"
+                type="number"
+                class="form-control"
+                placeholder="000"
+              />
+            </div>
+
+            <div class="form-group col-sm-12 col-md-4">
+              <label for="amount">Amount</label>
+              <div class="amount">
+                <i class="fas fa-dollar-sign"></i>
+                <input
+                  type="number"
+                  class="form-control"
+                  placeholder=""
+                  id="amount"
+                />
+              </div>
+            </div>
+
+            <div class="form-group col-sm-12 col-md-6">
+              <label for="name">First Name</label>
+              <input type="text" class="form-control" id="name" />
+            </div>
+
+            <div class="form-group col-sm-12 col-md-6">
+              <label for="lastName">Last Name</label>
+              <input type="text" class="form-control" id="lastName" />
+            </div>
+
+            <div class="form-group col-sm-12 col-md-6">
+              <label for="city">City</label>
+              <input type="text" class="form-control" id="city" />
+            </div>
+
+            <div class="form-group col-sm-12 col-md-3">
+              <label for="state">State</label>
+              <input
+                type="number"
+                placeholder="Pick a state"
+                class="form-control"
+                id="state"
+              />
+            </div>
+
+            <div class="form-group col-sm-12 col-md-3">
+              <label for="postalCode">Postal Code</label>
+              <input
+                type="number"
+                placeholder=""
+                class="form-control"
+                id="postalCode"
+              />
+            </div>
+
+            <div class="col-sm-12 col-md-6 text-white">
+              <p class="text-dark">We accept:</p>
+              <div
+                id="CreditCards"
+                class="bg-secondary rounded col-md-6 py-1 d-inline-flex"
+              >
+                <div class="form-check Card ml-2 col-md-3">
+                  <input
+                    class="form-check-input"
+                    type="radio"
+                    name="Card"
+                    id="CardMaster"
+                    value="option1"
+                  />
+                  <label class="form-check-label" for="CardMaster">
+                    <i class="fab fa-cc-mastercard"></i>
+                  </label>
+                </div>
+
+                <div class="form-check Card ml-2 col-md-3">
+                  <input
+                    class="form-check-input"
+                    type="radio"
+                    name="Card"
+                    id="CardVisa"
+                    value="option2"
+                  />
+                  <label class="form-check-label" for="CardVisa">
+                    <i class="fab fa-cc-visa"></i>
+                  </label>
+                </div>
+
+                <div class="form-check Card ml-2 col-md-3">
+                  <input
+                    class="form-check-input"
+                    type="radio"
+                    name="Card"
+                    id="CardAmerican"
+                    value="option3"
+                  />
+                  <label class="form-check-label" for="CardAmerican">
+                    <i class="fab fa-cc-amex"></i>
+                  </label>
+                </div>
+
+                <div class="form-check Card ml-2 col-md-3">
+                  <input
+                    class="form-check-input"
+                    type="radio"
+                    name="Card"
+                    id="CardDiners"
+                    value="option4"
+                  />
+                  <label class="form-check-label" for="CardDiners">
+                    <i class="fab fa-cc-diners-club"></i>
+                  </label>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group col-sm-12 col-md-6">
+              <label for="Message">Message</label>
+              <textarea
+                class="form-control"
+                id="Messager"
+                rows="3"
+                aria-describedby="MessageHelp"
+              ></textarea>
+              <small id="MessageHelp" class="form-text text-muted"
+                >Add any notes here</small
+              >
+            </div>
+          </div>
+          <div class="div row m-0 bg-light border-top">
+            <div id="buttons" class="col-md-12 d-flex justify-content-end">
+              <button type="button" class="btn btn-secondary m-2">
+                Cancel
+              </button>
+              <button type="submit" class="btn btn-primary m-2">Save</button>
+            </div>
+          </div>
+        </form>
       </div>
     </div>
+
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns"
+      crossorigin="anonymous"
+    ></script>
   </body>
 </html>
